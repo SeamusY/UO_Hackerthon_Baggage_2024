@@ -47,11 +47,28 @@ const getPinColor = async (db, pin) => {
     } catch (error) {
         console.log(error)
     }
+    // add a record to light_tag_pings
+    try {
+        db.collection("/light_tag_pings").add({
+            tagId: pin,
+            ts: new Date(),
+            color: color,
+        });
+        console.log('added ping to pings log')
+    } catch (err) {
+        console.log(err);
+    }
     return { color: color || 'error' }; // Return unknown if pin isn't defined
 };
-const getPinHealth = async (pin) => {
-    // did this `pin` ping getPinColor in the last <threshold> minutes
-    return true
+const getPinHealth = async (db, pin) => {
+    let pinLog = await db.collection('light_tag_pings').get()
+    let list = ctx.body = pinLog.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data()
+    }))
+    let flist = list.filter(doc => doc.tagId == pin && (new Date().getTime() - doc.ts._seconds * 1000 < 5 * 60 * 1000))
+    // console.log(flist)
+    return flist.length > 0
 }
 
 module.exports = {
