@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "@koa/cors": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "firebase": "^11.0.1",
+    "firebase-admin": "^12.7.0",
     "koa": "^2.15.3",
     "koa-bodyparser": "^4.4.1",
     "koa-router": "^13.0.1"
