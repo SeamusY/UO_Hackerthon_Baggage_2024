@@ -1,7 +1,7 @@
 const Router = require("koa-router");
 const router = new Router();
-
-router.get("/events_list", (ctx) => (ctx.body = "Events List!"));
+const { getBaggages } = require("./controllers/baggage_controllers/baggage.controller");
+router.get("/baggages", getBaggages);
 router.post("/add_event", (ctx) => (ctx.body = "Event Posted!"));
 
 module.exports = router;
