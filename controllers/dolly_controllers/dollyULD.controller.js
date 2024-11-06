@@ -14,10 +14,11 @@ const sensorResponses = async (dollyQr = 0) => {
     return simulatedResponses; // Return the list of RFID tags
 };
 
-const getRfidDevicesList = async (dollyQr) => {
+const getRfidDevicesList = async (ctx) => {
     // Ask sensors to retrieve RFID tags in the proximity
-    let list = await sensorResponses(dollyQr)
-    return { count: list.length, data: list }
+    let list = await sensorResponses(ctx.query.dollyQr)
+    ctx.status = 200;
+    ctx.body =  { count: list.length, data: list }
 }
 
 module.exports = {
