@@ -10,7 +10,6 @@ router.get('/pincolor', async (ctx) => {
     if (!pinId) {
         ctx.status = 400; // Set the response status to 400
         ctx.body = { color: 'error', error: 'pinid parameter is required' }; // Return the error message
-        return;
     }
     try {
         const result = await getPinColor(pinId); // Correct function name

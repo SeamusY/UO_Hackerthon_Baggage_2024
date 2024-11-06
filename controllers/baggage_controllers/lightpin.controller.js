@@ -4,19 +4,19 @@ const getPinColor = async (pin) => {
     // color = 'red'
     // B: else if passenger is on board or confidenceStatus == 'OK TO LOAD'
     // color = 'green'
-    // else 'yellow'
-
+    // C: else if passenger confidenceStatus == 'WAIT TO LOAD'
+    // color = 'yellow'
 
     // uuid -> luggage RFID -> pax -> pax_distance -> pax_confidence -> confidenceStatus
-    let color = null
+    let color = null;
     if (A) {
-        color = 'red'
+        color = 'red';
     }
     else if (B) {
-        color = 'green'
+        color = 'green';
     }
-    else {
-        color = 'yellow'
+    else if (C){
+        color = 'yellow';
     }
     // log this ping for health check
     return { color: color || 'error' }; // Return unknown if pin isn't defined
