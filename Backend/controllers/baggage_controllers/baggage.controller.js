@@ -5,7 +5,7 @@ const getBaggages = (ctx) => {
 
 const updateBaggages = (ctx) => {
   ctx.body = []; // Send to backend for edit.
-  ctx.status = 200;
+  ctx.status = 204;
 };
 
 module.exports = {

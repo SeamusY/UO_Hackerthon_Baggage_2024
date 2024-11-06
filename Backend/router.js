@@ -48,13 +48,16 @@ router.get("/baggages", getBaggages);
 router.post("/add_event", (ctx) => (ctx.body = "Event Posted!"));
 
 router.get('/pincolor', async (ctx) => {
+    // console.log(ctx.query.pinid)
     const pinId = ctx.query.pinid; // Get the pin id from the query parameters
     if (!pinId) {
+        // console.log("no pinId")
         ctx.status = 400; // Set the response status to 400
         ctx.body = { color: 'error', error: 'pinid parameter is required' }; // Return the error message
+        return
     }
     try {
-        const result = await getPinColor(pinId); // Correct function name
+        const result = await getPinColor(db,pinId); // Correct function name
         ctx.body = result; // Set the result as the response body
     } catch (error) {
         ctx.status = 500; // Set the response status to 500
