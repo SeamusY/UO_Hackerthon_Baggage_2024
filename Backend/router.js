@@ -39,7 +39,6 @@ router.get("/testing_db", async (ctx) => {
     ctx.body = JSON.stringify(userData);
     ctx.status = 200;
   } catch(err) {
-    console.log("ERROR ", err);
     ctx.body = "Error";
     ctx.status = 500;
   }
