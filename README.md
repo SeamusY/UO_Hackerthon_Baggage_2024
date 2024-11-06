@@ -4,7 +4,7 @@ This repository contains the project for the **Cathay Hackathon 2024 - Wee Fly**
 
 ## Technical Overview
 
-The solution leverages AI to analyze historical data regarding the time required to transport baggage from the storage area to specific boarding bays. By comparing this data with the time remaining until the **Estimated Off-Block Time** (EOBT) minus 5 minutes, we can calculate a **Passenger Confidence** score. This score indicates whether it is appropriate to load the baggage onto the aircraft.
+The solution leverages AI to analyze historical data regarding the time required for passengers to walk from the shops and other terminal areas to specific boarding bays. By comparing this data against current passenger position using new boarding passes' RFID chip, with the time remaining until the **Estimated Off-Block Time** (EOBT) minus 5 minutes, we can calculate a **Passenger Confidence** score. This score indicates whether it is appropriate to load the baggage onto the aircraft.
 
 ## Passenger Confidence Levels
 
