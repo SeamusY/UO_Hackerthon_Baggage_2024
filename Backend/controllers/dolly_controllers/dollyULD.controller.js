@@ -2,13 +2,13 @@ const sensorResponses = async (dollyQr = 0) => {
     // in actual situations this implementation will actually call sensors in Dolly to get the proximity RFID tags
     const simulatedResponses = [
         [
-            { id: 'tag1', },
-            { id: 'tag2', },
-            { id: 'tag3', }
+            { id: 'light_tag1', },
+            { id: 'light_tag2', },
+            { id: 'light_tag3', }
         ],
         [
-            { id: 'tag4', },
-            { id: 'tag5', }
+            { id: 'light_tag4', },
+            { id: 'light_tag5', }
         ],
     ][dollyQr];
     return simulatedResponses; // Return the list of RFID tags

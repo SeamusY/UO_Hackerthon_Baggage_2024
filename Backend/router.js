@@ -51,12 +51,12 @@ router.get("/baggages", async (ctx) => {
     ctx.body = await getBaggages(db, ctx);
     ctx.status = 200;
   }
-  catch(err) {console.log(err)
+  catch (err) {
+    console.log(err)
     ctx.body = "Error: {" + err + "}";
     ctx.status = 500
   }
 });
-// router.post("/add_event", (ctx) => (ctx.body = "Event Posted!"));
 
 router.get('/pincolor', async (ctx) => {
   // console.log(ctx.query.pinid)
@@ -109,12 +109,12 @@ router.get('/pinhealth', async (ctx) => {
   }
   try {
     const result = await getPinHealth(db, pinId); // Correct function name
-    ctx.body = {isAlive: result}; // Set the result as the response body
+    ctx.body = { isAlive: result }; // Set the result as the response body
     ctx.status = 200
   } catch (error) {
     ctx.status = 500; // Set the response status to 500
     ctx.body = { color: 'error', error: 'An error occurred while processing your request.' }; // Return an error message
-  } 
-  })
+  }
+})
 
 module.exports = router;
