@@ -56,8 +56,17 @@ router.get("/testing_db", async (ctx) => {
   }
 });
 
-router.get("/baggages", getBaggages);
-router.post("/add_event", (ctx) => (ctx.body = "Event Posted!"));
+router.get("/baggages", async (ctx) => {
+  try {
+    ctx.body = await getBaggages(db, ctx);
+    ctx.status = 200;
+  }
+  catch(err) {console.log(err)
+    ctx.body = "Error: {" + err + "}";
+    ctx.status = 500
+  }
+});
+// router.post("/add_event", (ctx) => (ctx.body = "Event Posted!"));
 
 router.get('/pincolor', async (ctx) => {
   // console.log(ctx.query.pinid)
