@@ -29,6 +29,11 @@ router.get("/testing_db", async (ctx) => {
   // const q = query(collection(db, "testing_db"), where("id", "==", "H3LL0"));
   try {
     const q = db.collection("/users").doc("cDU392ANN7OVdBYAnN9l");
+    const totalCollection = await db.collection("/users").get();
+    // const indiviudalCollection = (totalCollection ?? []).map((doc) =>  doc.get().data());
+    console.log("THE DATA BASE LOGIC IS ", totalCollection.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data()}))); // Get all data from Users.
     const user = await q.get();
     const userData = user.data();
     ctx.body = JSON.stringify(userData);
