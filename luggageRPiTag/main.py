@@ -60,7 +60,7 @@ def flash_red(total_seconds):
 
 
 def get_colour_delay_period():
-    # As an improvement
+    # TODO As an improvement
     # Delay period can be dynamically adjusted (reduced when close to EOBT) in accordance to time till EOBT
     # Default is set to 60 seconds
     return 60 # seconds
