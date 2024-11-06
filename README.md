@@ -17,4 +17,4 @@ The solution leverages AI to analyze historical data regarding the time required
 
 ## Conclusion
 
-This approach aims to enhance the efficiency of baggage handling and ensure timely loading of cargo, ultimately improving the passenger experience. For further details or contributions, please refer to the project documentation.
+...
