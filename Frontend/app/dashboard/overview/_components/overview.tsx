@@ -1,14 +1,10 @@
-"use client";
 import { AreaGraph } from "./area-graph";
 import { BarGraph } from "./bar-graph";
 import { PieGraph } from "./pie-graph";
-import { CalendarDateRangePicker } from "@/components/date-range-picker";
 import PageContainer from "@/components/layout/page-container";
 import { RecentSales } from "./recent-sales";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useFirebase } from "@/hooks/use-firebase";
 
 export default function OverViewPage() {
   return (
