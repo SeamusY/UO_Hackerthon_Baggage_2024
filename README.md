@@ -19,5 +19,4 @@ The confidence thresholds are for reference only and are rough estimations of si
 | N/A                      | Errornous (Connectivity, server etc) | <u>Scan passive RFID for status review</u> | <span style="background-color: red; color: white; padding: 2px;">FLASHING RED</span> at 1s period |
 
 ## Conclusion
-
-...
+… Get the plane back in the air quickly, optimising turnaround and fleet utilisation.
